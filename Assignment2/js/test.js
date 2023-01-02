@@ -3,7 +3,7 @@ import { GUI } from 'https://cdn.skypack.dev/three@0.136/examples/jsm/libs/lil-g
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136/examples/jsm/controls/OrbitControls.js';
 const scene = new THREE.Scene();
 
-var width = 32
+var width = 34
 var height = 20
 var near = 0.1
 var far = 100
