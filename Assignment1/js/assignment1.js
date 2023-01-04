@@ -178,7 +178,7 @@ function animate() {
 	if(fruitExists){
 		droppedCube.position.y -= fruitSpeed;
 
-		// Check if the fruit has collided with the player object, if it did play the getting fruit sound remove the fruit from the scene unset the fruitExists flag and and 1 to the score
+		// Check if the fruit has collided with the player object, if it did play the getting fruit sound remove the fruit from the scene reset the fruitExists flag and and 1 to the score
 		if(isColliding(cube,droppedCube)){
 			gotFruitSound.play()
 			scene.remove(droppedCube);

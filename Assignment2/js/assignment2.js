@@ -2,6 +2,8 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.136';
 import { GUI } from 'https://cdn.skypack.dev/three@0.136/examples/jsm/libs/lil-gui.module.min.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136/examples/jsm/controls/OrbitControls.js';
+
+// Create a new scene
 const scene = new THREE.Scene();
 
 // Camera Variables (16:9 aspect Ratio)
@@ -71,6 +73,8 @@ scene.add(planeMesh);
 // Create new (20,20) grid and add it to scene
 const grid = new THREE.GridHelper(20,20);
 grid.rotateX(-Math.PI/2)
+grid.visible = false
+scene.add(grid)
 
 // Adding a GUI
 var gui = new GUI();
@@ -169,7 +173,7 @@ window.addEventListener('keydown', function (e) {
 					snakeBody[snakeBody.length-1].position.set(snakeBody[snakeBody.length-2].position.x,snakeBody[snakeBody.length-2].position.y,snakeBody[snakeBody.length-2].position.z);
 				}
 
-				// Remove the fruit and unset the fruitExists flag
+				// Remove the fruit and reset the fruitExists flag
 				scene.remove(fruit);
 				fruitExists = false;
 
@@ -288,7 +292,7 @@ function animate() {
 					snakeBody[snakeBody.length-1].position.set(snakeBody[snakeBody.length-2].position.x,snakeBody[snakeBody.length-2].position.y,snakeBody[snakeBody.length-2].position.z);
 				}
 
-				// Remove the fruit from the scene and unset the fruitExists flag
+				// Remove the fruit from the scene and reset the fruitExists flag
 				scene.remove(fruit);
 				fruitExists = false;
 
