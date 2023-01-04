@@ -62,7 +62,7 @@ scene.add(planeMesh);
 
 const grid = new THREE.GridHelper(20,20);
 grid.rotateX(-Math.PI/2)
-scene.add(grid)
+
 
 
 
@@ -135,7 +135,7 @@ window.addEventListener('keydown', function (e) {
 	
 			if(isColliding(snakeHead,fruit)){
 				console.log("COLLISION")
-				snakeBody.push(new THREE.Mesh( geometry, new THREE.MeshPhongMaterial({color:0x00ff00}) ));
+				snakeBody.push(new THREE.Mesh( geometry, new THREE.MeshPhongMaterial({color:0x60b922}) ));
 				scene.add(snakeBody[snakeBody.length-1]);
 				eatingSound.play()
 				if(snakeBody.length>1){
@@ -228,7 +228,7 @@ function animate() {
 	
 			if(isColliding(snakeHead,fruit)){
 				eatingSound.play()
-				snakeBody.push(new THREE.Mesh( geometry, new THREE.MeshPhongMaterial({color:0x00ff00}) ));
+				snakeBody.push(new THREE.Mesh( geometry, new THREE.MeshPhongMaterial({color:0x60b922}) ));
 				scene.add(snakeBody[snakeBody.length-1]);
 				console.log(snakeBody)
 				if(snakeBody.length>=1){
