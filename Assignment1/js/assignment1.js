@@ -36,7 +36,7 @@ audioLoader.load("./got fruit.mp3", function(buffer){
 	gotFruitSound.setBuffer(buffer);
 	gotFruitSound.setLoop(false);
 	gotFruitSound.setVolume(1.0);
-	gotFruitSound.duration = 1.5;
+	gotFruitSound.duration = 1.;
 });
 
 const failureSound = new THREE.Audio(listener);

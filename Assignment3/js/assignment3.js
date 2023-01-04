@@ -70,7 +70,7 @@ while(!difficulty){
 		case "n":
 			enemyMovementTimerMax = 200;
 			break;
-		case "h	":
+		case "h":
 			enemyMovementTimerMax = 100;
 			break;
 		default:
