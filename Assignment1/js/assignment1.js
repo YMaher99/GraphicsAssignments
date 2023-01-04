@@ -45,7 +45,7 @@ audioLoader.load("./got fruit.mp3", function(buffer){
 	gotFruitSound.setBuffer(buffer);
 	gotFruitSound.setLoop(false);
 	gotFruitSound.setVolume(1.0);
-	gotFruitSound.duration = 1.;
+	gotFruitSound.duration = 1.2;
 });
 
 // Loading the failure sound
@@ -54,8 +54,12 @@ audioLoader.load("./failure.mp3", function(buffer){
 	failureSound.setBuffer(buffer);
 	failureSound.setLoop(false);
 	failureSound.setVolume(1.0);
-
+	failureSound.duration = 1.5;
 });
+
+// Add the listener to the camera
+camera.add(listener);
+
 
 // Create a renderer and add it to the HTML DOM
 const renderer = new THREE.WebGLRenderer({alpha:true});
@@ -129,7 +133,7 @@ material = new THREE.MeshPhongMaterial({color:0xff0000});
 const droppedCube = new THREE.Mesh(geometry, material); 
 
 
-// Add an even listener for when a user presses keyboard buttons (i.e. controls for the game)
+// Add an event listener for when a user presses keyboard buttons (i.e. controls for the game)
 window.addEventListener('keydown', function (e) {
 	if (e.key == 'D' || e.key == "d") {
 	  cube.position.x += 1;
@@ -154,10 +158,10 @@ function isColliding(obj1, obj2) {
 
 // Animation function that plays every frame
 function animate() {
-	// requests that the animate function is called next frame
+	// Requests that the animate function is called next frame
 	requestAnimationFrame( animate );
 
-	// if the fruit is not in the scene add it to the scene at a random x position and from a certain height
+	// If the fruit is not in the scene add it to the scene at a random x position and from a certain height
 	if (!fruitExists){
 		fruitExists = true;
 		scene.add(droppedCube);
